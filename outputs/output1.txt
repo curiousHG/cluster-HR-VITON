@@ -1,0 +1,244 @@
+Namespace(CElamda=10, D_lr=0.0002, Ddownx2=True, Ddropout=True, GANlambda=1, G_D_seperate=False, G_lr=0.0002, add_lasttv=False, batch_size=8, checkpoint_dir='checkpoints', clothmask_composition='warp_grad', data_list='data3/train1.txt', datamode='train', dataroot='./data/', display_count=100, edgeawaretv='no_edge', fine_height=256, fine_width=192, fp16=False, gpu_ids='0', interflowloss=True, keep_step=30000, lasttvonly=True, load_step=0, name='full_test1', no_GAN_loss=False, no_test_visualize=False, num_D=2, num_test_visualize=3, occlusion=True, out_layer='relu', output_nc=13, save_count=10000, semantic_nc=13, shuffle=False, spectral=False, tensorboard_count=5, tensorboard_dir='tensorboard', test_data_list='data3/test1.txt', test_dataroot='./data/', test_datasetting='unpaired', tocg_checkpoint='/home/mech/btech/me2190885/HR-VITON/checkpoints/mtviton.pth', tvlambda=2, upsample='bilinear', val_count=1000, warp_feature='T1', workers=4)
+Start to train full_test1!
+MultiscaleDiscriminator(
+  (layer0): Sequential(
+    (0): Conv2d(33, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (3): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (7): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (8): LeakyReLU(negative_slope=0.2, inplace=True)
+    (9): Dropout(p=0.5, inplace=False)
+    (10): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (11): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (12): LeakyReLU(negative_slope=0.2, inplace=True)
+    (13): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (layer1): Sequential(
+    (0): Conv2d(33, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (3): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (7): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (8): LeakyReLU(negative_slope=0.2, inplace=True)
+    (9): Dropout(p=0.5, inplace=False)
+    (10): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (11): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (12): LeakyReLU(negative_slope=0.2, inplace=True)
+    (13): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (downsample): AvgPool2d(kernel_size=3, stride=2, padding=[1, 1])
+)
+step:      100, time: 1.975
+loss G: 2.2043, L1_cloth loss: 0.0456, VGG loss: 0.0094, TV loss: 0.3415 CE: 0.0188, G GAN: 0.8677
+loss D: 1.7251, D real: 0.8570, D fake: 0.8681
+step:      200, time: 1.630
+loss G: 2.0904, L1_cloth loss: 0.0421, VGG loss: 0.0101, TV loss: 0.3581 CE: 0.0209, G GAN: 0.7334
+loss D: 1.5718, D real: 0.7258, D fake: 0.8461
+step:      300, time: 1.979
+loss G: 2.2616, L1_cloth loss: 0.0498, VGG loss: 0.0109, TV loss: 0.3053 CE: 0.0499, G GAN: 0.6437
+loss D: 1.2715, D real: 0.6277, D fake: 0.6438
+step:      400, time: 1.952
+loss G: 1.9605, L1_cloth loss: 0.0398, VGG loss: 0.0107, TV loss: 0.3450 CE: 0.0269, G GAN: 0.5935
+loss D: 1.1680, D real: 0.5980, D fake: 0.5700
+step:      500, time: 1.895
+loss G: 2.1298, L1_cloth loss: 0.0542, VGG loss: 0.0124, TV loss: 0.3300 CE: 0.0341, G GAN: 0.5738
+loss D: 1.1022, D real: 0.5583, D fake: 0.5439
+step:      600, time: 1.941
+loss G: 1.5492, L1_cloth loss: 0.0289, VGG loss: 0.0092, TV loss: 0.2831 CE: 0.0154, G GAN: 0.5308
+loss D: 1.0884, D real: 0.5280, D fake: 0.5604
+step:      700, time: 1.958
+loss G: 1.7637, L1_cloth loss: 0.0268, VGG loss: 0.0098, TV loss: 0.3593 CE: 0.0176, G GAN: 0.5916
+loss D: 1.0833, D real: 0.5859, D fake: 0.4974
+step:      800, time: 1.861
+loss G: 1.6894, L1_cloth loss: 0.0305, VGG loss: 0.0121, TV loss: 0.3151 CE: 0.0169, G GAN: 0.5732
+loss D: 1.0532, D real: 0.5745, D fake: 0.4787
+step:      900, time: 1.936
+loss G: 1.6615, L1_cloth loss: 0.0247, VGG loss: 0.0089, TV loss: 0.3463 CE: 0.0182, G GAN: 0.5311
+loss D: 1.0511, D real: 0.5340, D fake: 0.5172
+step:     1000, time: 80.650
+loss G: 1.7642, L1_cloth loss: 0.0330, VGG loss: 0.0113, TV loss: 0.3299 CE: 0.0233, G GAN: 0.5299
+loss D: 1.0359, D real: 0.5243, D fake: 0.5116
+step:     1100, time: 1.581
+loss G: 1.4644, L1_cloth loss: 0.0239, VGG loss: 0.0111, TV loss: 0.2804 CE: 0.0142, G GAN: 0.5111
+loss D: 1.0424, D real: 0.5197, D fake: 0.5226
+step:     1200, time: 1.606
+loss G: 1.9303, L1_cloth loss: 0.0365, VGG loss: 0.0120, TV loss: 0.3396 CE: 0.0302, G GAN: 0.5718
+loss D: 1.0670, D real: 0.5727, D fake: 0.4943
+step:     1300, time: 1.941
+loss G: 1.8860, L1_cloth loss: 0.0464, VGG loss: 0.0110, TV loss: 0.3112 CE: 0.0220, G GAN: 0.5682
+loss D: 1.0600, D real: 0.5703, D fake: 0.4898
+step:     1400, time: 1.971
+loss G: 1.6094, L1_cloth loss: 0.0230, VGG loss: 0.0098, TV loss: 0.3300 CE: 0.0201, G GAN: 0.5094
+loss D: 1.0335, D real: 0.5070, D fake: 0.5265
+step:     1500, time: 1.966
+loss G: 1.9638, L1_cloth loss: 0.0454, VGG loss: 0.0133, TV loss: 0.3102 CE: 0.0344, G GAN: 0.5316
+loss D: 1.0662, D real: 0.5262, D fake: 0.5400
+step:     1600, time: 3.876
+loss G: 1.7887, L1_cloth loss: 0.0385, VGG loss: 0.0104, TV loss: 0.3270 CE: 0.0258, G GAN: 0.4809
+loss D: 1.0375, D real: 0.4794, D fake: 0.5580
+step:     1700, time: 1.956
+loss G: 1.6406, L1_cloth loss: 0.0240, VGG loss: 0.0118, TV loss: 0.3421 CE: 0.0156, G GAN: 0.5480
+loss D: 1.0323, D real: 0.5499, D fake: 0.4825
+step:     1800, time: 1.926
+loss G: 1.5746, L1_cloth loss: 0.0204, VGG loss: 0.0076, TV loss: 0.3335 CE: 0.0182, G GAN: 0.5136
+loss D: 1.0151, D real: 0.5122, D fake: 0.5029
+step:     1900, time: 1.578
+loss G: 1.8863, L1_cloth loss: 0.0391, VGG loss: 0.0144, TV loss: 0.3233 CE: 0.0272, G GAN: 0.5631
+loss D: 1.0282, D real: 0.5570, D fake: 0.4712
+step:     2000, time: 75.882
+loss G: 2.6251, L1_cloth loss: 0.0668, VGG loss: 0.0104, TV loss: 0.3714 CE: 0.0698, G GAN: 0.5061
+loss D: 1.0638, D real: 0.5049, D fake: 0.5589
+step:     2100, time: 1.980
+loss G: 1.6157, L1_cloth loss: 0.0290, VGG loss: 0.0135, TV loss: 0.3150 CE: 0.0193, G GAN: 0.4893
+loss D: 1.0335, D real: 0.4925, D fake: 0.5410
+step:     2200, time: 1.482
+loss G: 1.4832, L1_cloth loss: 0.0182, VGG loss: 0.0106, TV loss: 0.3300 CE: 0.0156, G GAN: 0.4741
+loss D: 1.0451, D real: 0.4758, D fake: 0.5693
+step:     2300, time: 1.678
+loss G: 1.5917, L1_cloth loss: 0.0222, VGG loss: 0.0109, TV loss: 0.3187 CE: 0.0182, G GAN: 0.5387
+loss D: 1.0288, D real: 0.5491, D fake: 0.4797
+step:     2400, time: 1.671
+loss G: 1.6536, L1_cloth loss: 0.0196, VGG loss: 0.0084, TV loss: 0.3929 CE: 0.0181, G GAN: 0.4827
+loss D: 1.0189, D real: 0.4832, D fake: 0.5357
+step:     2500, time: 1.960
+loss G: 1.7206, L1_cloth loss: 0.0239, VGG loss: 0.0112, TV loss: 0.3363 CE: 0.0197, G GAN: 0.6013
+loss D: 1.0367, D real: 0.6097, D fake: 0.4270
+step:     2600, time: 1.554
+loss G: 1.4310, L1_cloth loss: 0.0211, VGG loss: 0.0105, TV loss: 0.2884 CE: 0.0148, G GAN: 0.4851
+loss D: 1.0071, D real: 0.4814, D fake: 0.5257
+step:     2700, time: 1.371
+loss G: 1.7575, L1_cloth loss: 0.0336, VGG loss: 0.0121, TV loss: 0.3304 CE: 0.0210, G GAN: 0.5384
+loss D: 1.0239, D real: 0.5517, D fake: 0.4722
+step:     2800, time: 1.982
+loss G: 1.5492, L1_cloth loss: 0.0239, VGG loss: 0.0125, TV loss: 0.2881 CE: 0.0205, G GAN: 0.5169
+loss D: 1.0052, D real: 0.5117, D fake: 0.4936
+step:     2900, time: 1.402
+loss G: 1.6963, L1_cloth loss: 0.0356, VGG loss: 0.0107, TV loss: 0.3348 CE: 0.0198, G GAN: 0.4619
+loss D: 1.0288, D real: 0.4673, D fake: 0.5615
+step:     3000, time: 77.332
+loss G: 1.6299, L1_cloth loss: 0.0260, VGG loss: 0.0122, TV loss: 0.3110 CE: 0.0234, G GAN: 0.5023
+loss D: 1.0201, D real: 0.5049, D fake: 0.5152
+step:     3100, time: 2.004
+loss G: 1.5204, L1_cloth loss: 0.0204, VGG loss: 0.0092, TV loss: 0.3109 CE: 0.0166, G GAN: 0.5192
+loss D: 1.0112, D real: 0.5074, D fake: 0.5038
+step:     3200, time: 1.628
+loss G: 1.4741, L1_cloth loss: 0.0274, VGG loss: 0.0123, TV loss: 0.2698 CE: 0.0173, G GAN: 0.4754
+loss D: 1.0158, D real: 0.4749, D fake: 0.5408
+step:     3300, time: 1.810
+loss G: 1.6808, L1_cloth loss: 0.0282, VGG loss: 0.0127, TV loss: 0.3338 CE: 0.0206, G GAN: 0.5120
+loss D: 1.0151, D real: 0.5182, D fake: 0.4969
+step:     3400, time: 1.609
+loss G: 1.4987, L1_cloth loss: 0.0188, VGG loss: 0.0102, TV loss: 0.2791 CE: 0.0170, G GAN: 0.5721
+loss D: 1.0282, D real: 0.5773, D fake: 0.4509
+step:     3500, time: 1.960
+loss G: 1.5109, L1_cloth loss: 0.0249, VGG loss: 0.0123, TV loss: 0.3208 CE: 0.0193, G GAN: 0.4144
+loss D: 1.0580, D real: 0.4076, D fake: 0.6504
+step:     3600, time: 1.964
+loss G: 1.6200, L1_cloth loss: 0.0207, VGG loss: 0.0104, TV loss: 0.3537 CE: 0.0160, G GAN: 0.5354
+loss D: 1.0237, D real: 0.5448, D fake: 0.4789
+step:     3700, time: 1.918
+loss G: 1.4228, L1_cloth loss: 0.0141, VGG loss: 0.0096, TV loss: 0.3176 CE: 0.0130, G GAN: 0.5071
+loss D: 1.0106, D real: 0.5021, D fake: 0.5086
+step:     3800, time: 1.957
+loss G: 1.3621, L1_cloth loss: 0.0153, VGG loss: 0.0104, TV loss: 0.2899 CE: 0.0150, G GAN: 0.4691
+loss D: 1.0382, D real: 0.4727, D fake: 0.5655
+step:     3900, time: 1.435
+loss G: 1.5442, L1_cloth loss: 0.0198, VGG loss: 0.0101, TV loss: 0.3300 CE: 0.0142, G GAN: 0.5343
+loss D: 1.0152, D real: 0.5342, D fake: 0.4810
+step:     4000, time: 74.932
+loss G: 1.6191, L1_cloth loss: 0.0218, VGG loss: 0.0111, TV loss: 0.2994 CE: 0.0182, G GAN: 0.6087
+loss D: 1.0126, D real: 0.6079, D fake: 0.4047
+step:     4100, time: 1.653
+loss G: 1.5883, L1_cloth loss: 0.0330, VGG loss: 0.0113, TV loss: 0.3115 CE: 0.0179, G GAN: 0.4454
+loss D: 1.0315, D real: 0.4503, D fake: 0.5812
+step:     4200, time: 1.534
+loss G: 1.4828, L1_cloth loss: 0.0156, VGG loss: 0.0092, TV loss: 0.3343 CE: 0.0117, G GAN: 0.5313
+loss D: 1.0225, D real: 0.5314, D fake: 0.4911
+step:     4300, time: 1.966
+loss G: 1.5823, L1_cloth loss: 0.0190, VGG loss: 0.0100, TV loss: 0.3090 CE: 0.0150, G GAN: 0.6137
+loss D: 1.0347, D real: 0.6203, D fake: 0.4144
+step:     4400, time: 1.405
+loss G: 1.5237, L1_cloth loss: 0.0195, VGG loss: 0.0113, TV loss: 0.3083 CE: 0.0168, G GAN: 0.5328
+loss D: 1.0054, D real: 0.5289, D fake: 0.4765
+step:     4500, time: 1.885
+loss G: 1.4344, L1_cloth loss: 0.0199, VGG loss: 0.0111, TV loss: 0.3014 CE: 0.0147, G GAN: 0.4746
+loss D: 1.0141, D real: 0.4739, D fake: 0.5402
+step:     4600, time: 1.581
+loss G: 1.4193, L1_cloth loss: 0.0167, VGG loss: 0.0095, TV loss: 0.3170 CE: 0.0152, G GAN: 0.4573
+loss D: 1.0201, D real: 0.4614, D fake: 0.5587
+step:     4700, time: 1.871
+loss G: 1.7726, L1_cloth loss: 0.0247, VGG loss: 0.0129, TV loss: 0.3346 CE: 0.0223, G GAN: 0.6205
+loss D: 1.0373, D real: 0.6168, D fake: 0.4206
+step:     4800, time: 1.499
+loss G: 1.6860, L1_cloth loss: 0.0296, VGG loss: 0.0137, TV loss: 0.3236 CE: 0.0221, G GAN: 0.5081
+loss D: 1.0034, D real: 0.5029, D fake: 0.5005
+step:     4900, time: 1.954
+loss G: 1.3011, L1_cloth loss: 0.0172, VGG loss: 0.0106, TV loss: 0.2930 CE: 0.0141, G GAN: 0.3923
+loss D: 1.0626, D real: 0.3895, D fake: 0.6731
+step:     5000, time: 75.494
+loss G: 1.4469, L1_cloth loss: 0.0243, VGG loss: 0.0116, TV loss: 0.2804 CE: 0.0153, G GAN: 0.4789
+loss D: 1.0028, D real: 0.4736, D fake: 0.5292
+step:     5100, time: 1.609
+loss G: 2.1074, L1_cloth loss: 0.0466, VGG loss: 0.0130, TV loss: 0.3138 CE: 0.0468, G GAN: 0.5325
+loss D: 1.0059, D real: 0.5053, D fake: 0.5006
+step:     5200, time: 2.002
+loss G: 1.3543, L1_cloth loss: 0.0191, VGG loss: 0.0108, TV loss: 0.3083 CE: 0.0137, G GAN: 0.3982
+loss D: 1.0307, D real: 0.3940, D fake: 0.6367
+step:     5300, time: 2.008
+loss G: 1.4546, L1_cloth loss: 0.0218, VGG loss: 0.0118, TV loss: 0.2839 CE: 0.0143, G GAN: 0.5140
+loss D: 1.0067, D real: 0.5197, D fake: 0.4870
+step:     5400, time: 1.958
+loss G: 1.4175, L1_cloth loss: 0.0215, VGG loss: 0.0102, TV loss: 0.3003 CE: 0.0143, G GAN: 0.4489
+loss D: 1.0248, D real: 0.4598, D fake: 0.5649
+step:     5500, time: 1.418
+loss G: 1.3156, L1_cloth loss: 0.0201, VGG loss: 0.0106, TV loss: 0.2679 CE: 0.0172, G GAN: 0.3966
+loss D: 1.0474, D real: 0.4042, D fake: 0.6433
+step:     5600, time: 1.946
+loss G: 1.5305, L1_cloth loss: 0.0210, VGG loss: 0.0117, TV loss: 0.2888 CE: 0.0150, G GAN: 0.5810
+loss D: 1.0127, D real: 0.5775, D fake: 0.4352
+step:     5700, time: 2.015
+loss G: 1.8466, L1_cloth loss: 0.0384, VGG loss: 0.0107, TV loss: 0.3320 CE: 0.0292, G GAN: 0.4960
+loss D: 0.9909, D real: 0.4818, D fake: 0.5090
+step:     5800, time: 1.925
+loss G: 1.4508, L1_cloth loss: 0.0206, VGG loss: 0.0120, TV loss: 0.2829 CE: 0.0155, G GAN: 0.5118
+loss D: 0.9899, D real: 0.5121, D fake: 0.4778
+step:     5900, time: 1.955
+loss G: 1.6119, L1_cloth loss: 0.0250, VGG loss: 0.0110, TV loss: 0.3509 CE: 0.0144, G GAN: 0.5056
+loss D: 0.9962, D real: 0.4859, D fake: 0.5104
+step:     6000, time: 75.194
+loss G: 1.5528, L1_cloth loss: 0.0178, VGG loss: 0.0104, TV loss: 0.3387 CE: 0.0133, G GAN: 0.5531
+loss D: 1.0461, D real: 0.5668, D fake: 0.4793
+step:     6100, time: 1.935
+loss G: 1.4573, L1_cloth loss: 0.0221, VGG loss: 0.0121, TV loss: 0.2827 CE: 0.0153, G GAN: 0.5057
+loss D: 1.0098, D real: 0.5016, D fake: 0.5081
+step:     6200, time: 1.923
+loss G: 1.5433, L1_cloth loss: 0.0176, VGG loss: 0.0102, TV loss: 0.3151 CE: 0.0118, G GAN: 0.6085
+loss D: 1.0092, D real: 0.6053, D fake: 0.4039
+step:     6300, time: 1.946
+loss G: 1.5126, L1_cloth loss: 0.0232, VGG loss: 0.0128, TV loss: 0.2834 CE: 0.0167, G GAN: 0.5336
+loss D: 1.0067, D real: 0.5347, D fake: 0.4719
+step:     6400, time: 2.022
+loss G: 1.4654, L1_cloth loss: 0.0162, VGG loss: 0.0103, TV loss: 0.3208 CE: 0.0158, G GAN: 0.4935
+loss D: 0.9989, D real: 0.4895, D fake: 0.5095
+step:     6500, time: 1.508
+loss G: 1.3176, L1_cloth loss: 0.0191, VGG loss: 0.0113, TV loss: 0.2762 CE: 0.0150, G GAN: 0.4133
+loss D: 1.0428, D real: 0.4086, D fake: 0.6342
+step:     6600, time: 1.891
+loss G: 1.4129, L1_cloth loss: 0.0187, VGG loss: 0.0123, TV loss: 0.2722 CE: 0.0134, G GAN: 0.5347
+loss D: 1.0105, D real: 0.5154, D fake: 0.4951
+step:     6700, time: 1.387
+loss G: 1.7259, L1_cloth loss: 0.0276, VGG loss: 0.0135, TV loss: 0.3491 CE: 0.0181, G GAN: 0.5580
+loss D: 1.0294, D real: 0.5586, D fake: 0.4708
+step:     6800, time: 1.946
+loss G: 1.3758, L1_cloth loss: 0.0157, VGG loss: 0.0111, TV loss: 0.3015 CE: 0.0123, G GAN: 0.4811
+loss D: 1.0069, D real: 0.4759, D fake: 0.5310
+step:     6900, time: 1.849
+loss G: 1.3068, L1_cloth loss: 0.0208, VGG loss: 0.0099, TV loss: 0.2825 CE: 0.0145, G GAN: 0.3787
+loss D: 1.0434, D real: 0.3714, D fake: 0.6719

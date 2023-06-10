@@ -1,0 +1,28 @@
+  0%|          | 0/30000 [00:00<?, ?it/s]  0%|          | 0/30000 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "train_condition.py", line 506, in <module>
+    main()
+  File "train_condition.py", line 497, in main
+    train(opt, train_loader, val_loader, test_loader, board, tocg, D)
+  File "train_condition.py", line 192, in train
+    loss_vgg = criterionVGG(warped_cloth_paired, im_c)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mech/btech/me2190885/HR-VITON/networks.py", line 241, in forward
+    x_vgg, y_vgg = self.vgg(x), self.vgg(y)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mech/btech/me2190885/HR-VITON/networks.py", line 224, in forward
+    h_relu3 = self.slice3(h_relu2)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 447, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/mech/btech/me2190885/myenv/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: CUDA out of memory. Tried to allocate 48.00 MiB (GPU 0; 31.75 GiB total capacity; 4.68 GiB already allocated; 33.50 MiB free; 4.72 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+terminate called without an active exception
