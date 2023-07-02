@@ -55,6 +55,11 @@ python3 test_generator.py --occlusion --cuda {True} --test_name {test_name} --to
 ```python
 python3 cluster.py
 ```
+## Script for generating training commands
+With multiple clusters training and testing script became very repetitive so we wrote a script for generating the commands. It can also be used for storing the generated outputs and errors. It also can be directly used for running the commands directly by uncommenting subprocess calls.
+```python
+python3 run.py
+```
 
 ## Train try-on condition generator
 
