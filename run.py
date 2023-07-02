@@ -30,8 +30,8 @@ for i in range(3):
         '--tensorboard_count','50',
     ]
     print(' '.join(t))
-    # f = open(f'tcog_output{i}.txt', "w")
-    # e = open(f'tcog_error{i}.txt', "w")
+    # f = open(f'tiog_output{i}.txt', "w")
+    # e = open(f'tiog_error{i}.txt', "w")
     # subprocess.call(t,stdout = f,stderr = e)
     
     
