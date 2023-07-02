@@ -50,6 +50,11 @@ Here are the download links for each model checkpoint:
 ```python
 python3 test_generator.py --occlusion --cuda {True} --test_name {test_name} --tocg_checkpoint {condition generator ckpt} --gpu_ids {gpu_ids} --gen_checkpoint {image generator ckpt} --datasetting unpaired --dataroot {dataset_path} --data_list {pair_list_textfile}
 ```
+## Generate cluster data of cloth-masks
+
+```python
+python3 cluster.py
+```
 
 ## Train try-on condition generator
 
