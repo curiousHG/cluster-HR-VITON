@@ -50,16 +50,6 @@ Here are the download links for each model checkpoint:
 ```python
 python3 test_generator.py --occlusion --cuda {True} --test_name {test_name} --tocg_checkpoint {condition generator ckpt} --gpu_ids {gpu_ids} --gen_checkpoint {image generator ckpt} --datasetting unpaired --dataroot {dataset_path} --data_list {pair_list_textfile}
 ```
-## Generate cluster data of cloth-masks
-
-```python
-python3 cluster.py
-```
-## Script for generating training commands
-With multiple clusters training and testing script became very repetitive so we wrote a script for generating the commands. It can also be used for storing the generated outputs and errors. It also can be directly used for running the commands directly by uncommenting subprocess calls.
-```python
-python3 run.py
-```
 
 ## Train try-on condition generator
 
@@ -75,6 +65,18 @@ python3 train_generator.py --cuda {True} --name test -b 4 -j 8 --gpu_ids {gpu_id
 This stage takes approximately 4 days with two RTX 3090 GPUs. Tested environment: PyTorch 1.8.2+cu111.
 
 To use "--fp16" option, you should install apex library.
+
+## Generate cluster data of cloth-masks
+
+```python
+python3 cluster.py
+```
+## Script for generating training commands
+With multiple clusters training and testing script became very repetitive so we wrote a script for generating the commands. It can also be used for storing the generated outputs and errors. It also can be directly used for running the commands directly by uncommenting subprocess calls.
+```python
+python3 run.py
+```
+
 
 ## License
 
